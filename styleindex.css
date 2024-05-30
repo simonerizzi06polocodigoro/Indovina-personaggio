@@ -1,0 +1,56 @@
+body {
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+#sfondo {
+  
+  width: 100%; 
+  height: 100%; 
+  background-image: url('logo/logo_png.png');
+  background-repeat: repeat; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+
+#giocaora {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 48.5%;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+
+#menualatosx{
+  height: 95%;
+  width: 350px;
+  margin-left: 20px;
+  margin-right: -40px;
+  margin-top: 15px;
+  background-color: black;
+  border-radius: 20px;
+  position:absolute;
+}
+
+#menualatodx{
+  height: 95%;
+  width: 350px;
+  margin-left: 81.5%;
+  margin-top: 15px;
+  background-color: black;
+  border-radius: 20px;
+  position:absolute;
+}
+
+.scie{
+  margin-left: 23px;
+  margin-top: 50px; 
+  margin-right: 20px;
+  position: relative;
+  background: linear-gradient(to right, #fc466b, #3f5efb);
+  padding: 5px;
+  border-radius: 10px;
+}

@@ -1,0 +1,58 @@
+.center {
+  margin: auto;
+}
+
+
+body{
+ font-size: 40px;
+ letter-spacing: 2px;
+  font-family: "Honk", system-ui;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "MORF" 15,
+    "SHLN" 50;
+  background: rgb(63,94,251);
+  background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+}
+
+
+
+button{
+  
+  background: black;
+  border: none;
+}
+
+.si-button, .no-button {
+  padding-top: 30px;
+  background: black; /* Colore di sfondo originale */
+  border: none;
+  transition: background-color 0.3s ease; /* Transizione fluida per il cambio di colore */
+}
+
+/* Stile al passaggio del mouse */
+.si-button:hover, .no-button:hover {
+  cursor: pointer; /* Cambia il cursore in un puntatore per indicare che il bottone è cliccabile */
+}
+
+
+.content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+
+#bambolino{
+  height: 500px;
+  width: 1200px;
+  background: black;
+  border-radius:  40px;
+    border-width: 10px;
+    box-shadow: 50px 70px 70px ;
+} 
+

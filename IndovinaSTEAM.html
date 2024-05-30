@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indovina STEM</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="styleindex.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+</head>
+<body>	
+	<div id="sfondo"></div>
+    <center>
+        <div id="bambolino" class="content"></div> 
+        <div class="content">
+            <div id="domanda" class="center"></div>
+            <div class="center">
+                <button id="si" class="si-button"><img src="img/SI.png"></button>
+                <button id="no" class="no-button"><img src="img/NO.png"></button>
+            </div>
+        </div>
+    </center>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        class Personaggio {
+            constructor(nome, campo, nazionalita, sesso, universita, secolo, scoperta) {
+                this.nome = nome;
+                this.campo = campo;
+                this.nazionalita = nazionalita;
+                this.sesso = sesso;
+                this.universita = universita;
+                this.secolo = secolo; 
+                this.scoperta = scoperta;
+            }
+        }
+
+               const personaggi = [	
+            
+				new Personaggio("Galileo Galilei", 
+				            "Astronomia", 
+				            "Italiano", 
+				            "Maschio", 
+				            "l'Università di Pisa", 
+				            "XVI secolo", 
+				            "Telescopio", 
+),
+				new Personaggio("Marie Curie", 
+				            "Fisica", 
+				            "Polacca", 
+				            "Femmina", 
+				            "Sorbona", 
+				            "XIX-XX secolo", 
+				            "Radioattività", 
+),
+				new Personaggio("Albert Einstein", 
+				            "Fisica", 
+				            "Svizzera/Americana", 
+				            "Maschio", 
+				            "l'ETH Zurigo e l'Università di Berna", 
+				            "XIX-XX secolo", 
+				            "Teoria della relatività", 
+),
+				new Personaggio("Isaac Newton", 
+				            "Matematica e Fisica", 
+				            "Inglese", 
+				            "Maschio", 
+				            "l'Università di Cambridge", 
+				            "XVII secolo", 
+				            "Leggi del movimento e della gravitazione", 
+),
+				new Personaggio("J. Robert Oppenheimer", 
+				            "Fisica", 
+				            "Americano", 
+				            "Maschio", 
+				            "l'Università di Harvard", 
+				            "XX secolo", 
+				            "Bomba atomica", 
+),
+				new Personaggio("Charles Darwin", 
+				            "Biologia", 
+				            "Inglese", 
+				            "Maschio", 
+				            "l'Università di Cambridge", 
+				            "XIX secolo", 
+				            "Teoria dell\"evoluzione per selezione naturale", 
+),
+				new Personaggio("Leonardo da Vinci", 
+				            "Arte e Scienza", 
+				            "Italiano", 
+				            "Maschio", 
+				            "Firenze", 
+				            "XV-XVI secolo", 
+				            "il paracadute", 
+),
+				new Personaggio("Jane Goodall", 
+				            "Primatologia", 
+				            "Britannica", 
+				            "Femmina", 
+				            "l'Università di Cambridge", 
+				            "XX-XXI secolo", 
+				            "Studio sul comportamento delle scimmie", 
+),
+				new Personaggio("Nikola Tesla", 
+				            "Ingegneria e Fisica", 
+				            "Serbo-americano", 
+				            "Maschio", 
+				            "la Graz University of Technology", 
+				            "XIX-XX secolo", 
+				            "Corrente alternata", 
+),
+				new Personaggio("Rosalind Franklin", 
+				            "Chimica e Cristallografia", 
+				            "Britannica", 
+				            "Femmina", 
+				            "l'Università di Cambridge", 
+				            "XX secolo", 
+				            "Struttura del DNA", 	
+),
+				new Personaggio("Stephen Hawking", 
+				    		"Fisica", 
+				    		"Inglese", 
+				    		"Maschio", 
+				    		"l'Università di Cambridge", 
+				    		"XX-XXI secolo", 
+				    		"Teoria dei buchi neri", 
+	),			    
+				new Personaggio("Marcello Malpighi", 
+				    		"Biologia", 
+				    		"Italiano", 
+				    		"Maschio", 
+				    		"l'Università di Bologna", 
+				    		"XVII secolo", 
+				    		"Microscopia", 
+	),			    
+				new Personaggio("Barbara McClintock", 
+				    		"Genetica", 
+				    		"Americana", 
+				    		"Femmina", 
+				    		"la Cornell University", 
+				    		"XX secolo", 
+				    		"Trasposoni", 
+	),			    
+				new Personaggio("Alan Turing", 
+				    		"Informatica e Matematica", 
+				    		"Inglese", 
+				    		"Maschio", 
+				    		"l'Università di Princeton", 
+				    		"XX secolo", 
+				    		"Macchina di Turing", 
+	),			    
+				new Personaggio("Emmy Noether", 
+				    		"Matematica", 
+				    		"Tedesca", 
+				    		"Femmina", 
+				    		"l'Università di Gottinga", 
+				    		"XIX-XX secolo", 
+				    		"Teorema di Noether", 
+	),			    
+				new Personaggio("Carl Sagan", 
+				    		"Astronomia", 
+				    		"Americano", 
+				    		"Maschio", 
+				    		"l'Università di Chicago", 
+				    		"XX secolo", 
+				    		"Esobiologia", 
+	),			    
+				new Personaggio("Richard Feynman", 
+				    		"Fisica", 
+				    		"Americano", 
+				    		"Maschio", 
+				    		"il Massachusetts Institute of Technology", 
+				    		"XX secolo", 
+				    		"Elettrodinamica quantistica", 
+	),			    
+				new Personaggio("Hypatia", 
+				    		"Matematica e Filosofia", 
+				    		"Greca", 
+				    		"Femmina", 
+				    		"Alexandria", 
+				    		"IV-V secolo", 
+				    		"Astronomia e matematica", 
+	),			    	
+				new Personaggio("Lise Meitner", 
+				    		"Fisica", 
+				    		"Austriaca", 
+				    		"Femmina", 
+				   			"l'Università di Vienna", 
+				    		"XX secolo", 
+				    		"Fissione nucleare", 
+	),			    
+				
+				new Personaggio("Enrico Fermi", 
+				    		"Fisica", 
+				    		"Italiano", 
+				    		"Maschio", 
+				    		"l'Università di Roma La Sapienza", 
+				    	   	"XX secolo", 
+				    		"Reattore nucleare", 
+	),];
+
+        const domande = {
+            campo: "Lo scienziato è famoso per i suoi contributi nel campo di ",
+            nazionalita: "Lo scienziato è ",
+            sesso: "Lo scienziato è ",
+            universita: "Lo scienziato ha studiato presso ",
+            secolo: "Lo scienziato ha vissuto ",
+            scoperta: "Lo scienziato è famoso per la scoperta di "
+        };
+
+
+        let personaggiPossibili = [...personaggi];
+        let attributi = Object.keys(domande);
+        let indiceAttributoCorrente = 0;
+
+        function aggiornaDomanda() {
+            if (personaggiPossibili.length === 1) {
+                $('#domanda').text('Lo scienziato è ' + personaggiPossibili[0].nome + '!');
+                $('#si, #no').prop('disabled', true);
+                return;
+            }
+
+            if (indiceAttributoCorrente >= attributi.length) {
+                $('#domanda').text('Non sono riuscito a indovinare il personaggio.');
+                $('#si, #no').prop('disabled', true);
+                return;
+            }
+
+            const attributo = attributi[indiceAttributoCorrente];
+            $('#domanda').text(domande[attributo] + personaggiPossibili[0][attributo] + '?');
+        }
+		
+        function filtraPersonaggi(valore, eSi) {
+            const attributo = attributi[indiceAttributoCorrente];
+            personaggiPossibili = personaggiPossibili.filter(personaggio => 
+                eSi ? personaggio[attributo] === valore : personaggio[attributo] !== valore
+            );
+
+            // Se non ci sono abbastanza informazioni per distinguere ulteriormente, smetti di chiedere
+            if (personaggiPossibili.length <= 1 || indiceAttributoCorrente >= attributi.length - 1) {
+                aggiornaDomanda();
+                return;
+            }
+
+            indiceAttributoCorrente++;
+            aggiornaDomanda();
+        }
+
+        $('#si').on('click', function() {
+            filtraPersonaggi(personaggiPossibili[0][attributi[indiceAttributoCorrente]], true);
+        });
+
+        $('#no').on('click', function() {
+            filtraPersonaggi(personaggiPossibili[0][attributi[indiceAttributoCorrente]], false);
+        });
+
+        aggiornaDomanda();
+    </script>
+</body>
+</html>
